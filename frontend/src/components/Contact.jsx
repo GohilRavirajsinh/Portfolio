@@ -15,13 +15,13 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
-    
+
     try {
       // Connect to backend API
       await axios.post('http://localhost:5000/api/contact', formData);
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
       // Reset success message after 5 seconds
       setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
@@ -33,14 +33,14 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      
+
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue rounded-full mix-blend-screen filter blur-[150px] opacity-10 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-purple rounded-full mix-blend-screen filter blur-[150px] opacity-10 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -53,7 +53,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-8 items-start">
-          
+
           {/* Left: Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -66,7 +66,7 @@ const Contact = () => {
             <div className="absolute top-0 right-0 w-full h-1 bg-grad-1"></div>
 
             <h3 className="text-3xl font-bold text-white mb-8">Send Me a Message</h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -144,7 +144,7 @@ const Contact = () => {
               {/* Toast Messages */}
               <AnimatePresence>
                 {status === 'success' && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
@@ -154,7 +154,7 @@ const Contact = () => {
                   </motion.div>
                 )}
                 {status === 'error' && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
@@ -177,10 +177,10 @@ const Contact = () => {
           >
             <div className="glass-card p-8 relative overflow-hidden h-full flex flex-col justify-between group">
               <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-accent-purple rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-              
+
               <div>
                 <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
-                
+
                 <div className="space-y-8 relative z-10">
                   <a href="mailto:ravi.empowergrowth@gmail.com" className="flex items-start gap-5 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 transition-all group/item">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue/20 to-accent-cyan/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
@@ -219,7 +219,7 @@ const Contact = () => {
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
                   <p className="text-sm text-gray-300 font-medium">I typically respond within 24 hours</p>
                 </div>
-                
+
                 <div className="flex gap-4">
                   <a href="https://github.com/GohilRavirajsinh" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-[#0F172A] border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/30 hover:-translate-y-1 transition-all">
                     <Github className="w-5 h-5" />
