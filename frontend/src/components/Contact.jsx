@@ -18,7 +18,7 @@ const Contact = () => {
 
     try {
       // Use Render URL in production, or localhost in local development
-      const API_URL = import.meta.env.VITE_API_URL;
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
       await axios.post(`${API_URL}/api/contact`, formData);
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
