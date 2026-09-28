@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Phone, Send, CheckCircle2, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2, Github, Linkedin, Twitter, X } from 'lucide-react';
 import axios from 'axios';
 
 const Contact = () => {
@@ -79,7 +79,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full bg-[#0F172A]/80 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all duration-300"
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                   />
                 </div>
                 <div className="space-y-2">
@@ -92,7 +92,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full bg-[#0F172A]/80 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-purple focus:ring-1 focus:ring-accent-purple transition-all duration-300"
-                    placeholder="john@example.com"
+                    placeholder="youremail@gmail.com"
                   />
                 </div>
               </div>
